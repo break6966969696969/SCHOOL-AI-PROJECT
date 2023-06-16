@@ -1,5 +1,5 @@
 import pyttsx3
-from youtube_search_python import SearchVideos
+from youtubesearchpython import *
 from pytube import YouTube
 import subprocess
 import datetime
