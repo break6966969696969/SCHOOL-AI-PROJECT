@@ -1,7 +1,8 @@
 import pyttsx3
-from youtubesearchpython import *
+from youtube_search_python import SearchVideos
 from pytube import YouTube
 import subprocess
+import datetime
 
 # Initialize the text-to-speech engine
 engine = pyttsx3.init()
@@ -18,9 +19,7 @@ while True:
 
     # Process commands
     if command == "quit":
-        speak("Command executed successfully.")
-         
-        
+        break
     elif command == "hello":
         speak("Hello! How can I assist you?")
     elif command == "play music":
@@ -44,13 +43,15 @@ while True:
             speak("Song played successfully.")
         else:
             speak("Sorry, I couldn't find the requested song.")
+    elif command == "tell time":
+        current_time = datetime.datetime.now().strftime("%H:%M:%S")
+        speak(f"The current time is {current_time}.")
     else:
         # Perform the desired action
         # ...
 
         # Speak the response
         speak("Command executed successfully.")
-        break
 
 # Cleanup
 engine.stop()
